@@ -1,4 +1,4 @@
-## 📘 DeepSeek-OCR LoRA Fine-tuning (Chinese OCR)
+# 📘 DeepSeek-OCR LoRA Fine-tuning (Chinese OCR)
 
 A complete, reproducible pipeline for fine-tuning DeepSeek-OCR-3B using LoRA, Unsloth, and HuggingFace.
 This project focuses on improving real-world Chinese OCR accuracy (CER), and provides a fully working multi-modal training & evaluation framework.
@@ -127,14 +127,14 @@ Train with:
 from transformers import TrainingArguments, Trainer
 from unsloth import FastVisionModel
 
-# Load model with custom remote code
+### Load model with custom remote code
 model, tokenizer = FastVisionModel.from_pretrained(
     "unsloth/DeepSeek-OCR",
     trust_remote_code = True,
     load_in_4bit = False
 )
 
-# Apply LoRA
+### Apply LoRA
 model = FastVisionModel.get_peft_model(
     model,
     target_modules=[...],
@@ -173,7 +173,7 @@ trainer = Trainer(
     train_dataset = train_ds,
     eval_dataset = eval_ds,
     args = training_args,
-)
+
 
 trainer.train()
 
@@ -249,7 +249,7 @@ Every issue above has been solved and documented inside the repo.
 ⬜ ONNX / TensorRT 推理加速
 ⬜ Releasing real-world evaluation set
 
-## 🔗 LoRA 权重获取
+# 🔗 LoRA 权重获取
 
 本仓库仅包含训练与评估代码，不直接托管大模型权重。
 
