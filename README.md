@@ -1,9 +1,9 @@
-📘 DeepSeek-OCR LoRA Fine-tuning (Chinese OCR)
+## 📘 DeepSeek-OCR LoRA Fine-tuning (Chinese OCR)
 
 A complete, reproducible pipeline for fine-tuning DeepSeek-OCR-3B using LoRA, Unsloth, and HuggingFace.
 This project focuses on improving real-world Chinese OCR accuracy (CER), and provides a fully working multi-modal training & evaluation framework.
 
-🔥 1. Motivation
+## 🔥 1. Motivation
 
 DeepSeek-OCR delivers strong zero-shot OCR, but in many business scenarios (bills, receipts, medical records, screenshots) baseline accuracy is unstable:
 
@@ -20,7 +20,7 @@ High baseline CER (≈1.0)
 Goal：Build a LoRA fine-tuning pipeline that can significantly improve OCR performance on domain data—
 and make the whole process reproducible, interrupt-resistant, and suitable for long training sessions.
 
-🚀 2. Project Highlights
+## 🚀 2. Project Highlights
 ✔ Full multi-modal training pipeline (image + text)
 
 DeepSeek-OCR requires custom fields such as:
@@ -70,7 +70,7 @@ Includes:
 
 A custom CER evaluator is provided to measure real OCR accuracy.
 
-📂 3. Project Structure
+## 📂 3. Project Structure
 deepseek-ocr-finetune/
 │
 ├── data/
@@ -89,7 +89,7 @@ deepseek-ocr-finetune/
 ├── README.md
 └── requirements.txt
 
-🧩 4. Data Format (DeepSeek-OCR Expected Structure)
+## 🧩 4. Data Format (DeepSeek-OCR Expected Structure)
 
 Each sample is converted into:
 
@@ -122,7 +122,7 @@ Assistant-only training regions
 
 This repo includes a fully working converter.
 
-🧠 5. Training Pipeline
+## 🧠 5. Training Pipeline
 Train with:
 from transformers import TrainingArguments, Trainer
 from unsloth import FastVisionModel
@@ -177,7 +177,7 @@ trainer = Trainer(
 
 trainer.train()
 
-📈 6. Evaluation Results (Checkpoint: 1000 steps)
+## 📈 6. Evaluation Results (Checkpoint: 1000 steps)
 
 Evaluated on 50 / 100 / 200 / 1000 / 2000 samples.
 
@@ -201,7 +201,7 @@ Fine-tuned CER ≈ 0.70
 
 更适合作为结构化抽取的前置 OCR 模型
 
-📉 7. Example Outputs
+## 📉 7. Example Outputs
 
 Example 1:
 
@@ -226,7 +226,7 @@ CER  : 0.33
 
 👉 明显减少冗余字、方向错误和补词。
 
-🛠 8. Troubleshooting & Common Issues
+## 🛠 8. Troubleshooting & Common Issues
 
 This repo includes fixes for:
 
@@ -241,7 +241,7 @@ This repo includes fixes for:
 
 Every issue above has been solved and documented inside the repo.
 
-🧪 9. Roadmap
+## 🧪 9. Roadmap
 ✅ LoRA 微调（当前）
 ⬜ 支持全参数微调 (DeepSpeed ZeRO-2/3)
 ⬜ 支持模型在票据 OCR / 医疗 OCR 上继续扩展
