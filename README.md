@@ -248,3 +248,9 @@ Every issue above has been solved and documented inside the repo.
 ⬜ Demo WebUI（Gradio）
 ⬜ ONNX / TensorRT 推理加速
 ⬜ Releasing real-world evaluation set
+
+## 🔗 LoRA 权重获取
+
+本仓库仅包含训练与评估代码，不直接托管大模型权重。
+
+- DeepSeek-OCR 中文场景 LoRA 权重（step=1000）目前存放于个人云盘
